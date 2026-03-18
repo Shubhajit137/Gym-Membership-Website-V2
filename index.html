@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apex Fitness — Premium gym membership with world-class equipment, elite trainers, and a luxurious training environment." />
+  <title>Apex Fitness — Push Beyond Limits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div class="grain-overlay"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-dumbbell"><div class="weight left"></div><div class="bar"></div><div class="weight right"></div></div>
+    <div class="loader-logo">APEX FITNESS</div>
+    <div class="loader-bar-container"><div class="loader-bar" id="loaderBar"></div></div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">APEX FITNESS</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"><img src="images/hero-bg.png" alt="Apex Fitness gym" loading="eager" /></div>
+    <div class="hero-gradient-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Premium Fitness Experience</div>
+      <h1 class="hero-title"><span class="hero-gradient-text">Push Beyond</span><br/>Limits</h1>
+      <p class="hero-subtitle">Train in a world-class environment built for those who refuse to settle. Elite equipment. Expert trainers. Unmatched results.</p>
+      <a href="#join" class="btn-primary" data-magnetic>Join Now →</a>
+    </div>
+    <div class="ambient-glow glow-1"></div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="ambient-glow glow-2"></div>
+    <div class="text-center">
+      <span class="section-label reveal">Why Choose Us</span>
+      <h2 class="section-title reveal"><span>Premium</span> Training Environment</h2>
+      <p class="section-subtitle mx-auto reveal">State of the art equipment, elite trainers, and an environment designed to push you beyond what you thought possible.</p>
+    </div>
+    <div class="features-grid stagger-children" id="featuresGrid"></div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="text-center">
+      <span class="section-label reveal">Our Space</span>
+      <h2 class="section-title reveal">Gym <span>Experience</span></h2>
+      <p class="section-subtitle mx-auto reveal">Step into a training environment that inspires greatness. Every corner designed with purpose.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- Plans -->
+  <section class="section" id="plans">
+    <div class="ambient-glow glow-3"></div>
+    <div class="text-center">
+      <span class="section-label reveal">Membership</span>
+      <h2 class="section-title reveal">Choose Your <span>Plan</span></h2>
+      <p class="section-subtitle mx-auto reveal">Invest in yourself. Every plan includes access to our premium facility and community.</p>
+    </div>
+    <div class="plans-grid" id="plansGrid"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="testimonials">
+    <div class="text-center">
+      <span class="section-label reveal">Testimonials</span>
+      <h2 class="section-title reveal">What Our <span>Members</span> Say</h2>
+    </div>
+    <div class="testimonials-wrapper reveal">
+      <div class="testimonials-track" id="testimonialsTrack"></div>
+      <div class="testimonials-dots" id="testimonialsDots"></div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section class="section" id="join">
+    <div class="text-center">
+      <span class="section-label reveal">Get Started</span>
+      <h2 class="section-title reveal">Join <span>Apex Fitness</span></h2>
+      <p class="section-subtitle mx-auto reveal">Start your transformation today. Fill out the form and our team will reach out within 24 hours.</p>
+    </div>
+    <div class="join-wrapper">
+      <div class="join-card reveal" data-tilt data-tilt-max="4">
+        <form id="joinForm" autocomplete="off">
+          <div class="form-group"><input type="text" id="fullName" placeholder=" " required /><label for="fullName">Full Name</label></div>
+          <div class="form-group"><input type="email" id="email" placeholder=" " required /><label for="email">Email Address</label></div>
+          <div class="form-group"><input type="tel" id="phone" placeholder=" " required /><label for="phone">Phone Number</label></div>
+          <div class="form-group">
+            <select id="planSelect" required><option value="" disabled selected></option><option value="basic">Basic — ₹999/mo</option><option value="pro">Pro — ₹1,999/mo</option><option value="elite">Elite — ₹2,999/mo</option></select>
+            <label for="planSelect">Select Plan</label>
+          </div>
+          <div class="form-group"><textarea id="message" rows="3" placeholder=" "></textarea><label for="message">Message (optional)</label></div>
+          <button type="submit" class="form-submit" data-magnetic>Start Your Journey →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid" id="footerGrid"></div>
+    <div class="footer-bottom"><p>&copy; 2026 Apex Fitness. All rights reserved. Designed with ⚡ for greatness.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
